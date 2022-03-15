@@ -4,8 +4,9 @@ FROM php:8.1-alpine
 RUN apk add --no-cache $PHPIZE_DEPS \
     imagemagick-dev icu-dev zlib-dev jpeg-dev libpng-dev libzip-dev libgomp; \
     docker-php-ext-configure gd --with-jpeg; \
-    docker-php-ext-install intl pcntl gd exif zip; \
+    docker-php-ext-install intl pcntl gd exif zip mysqli pdo pdo_mysql; \
     # Extensions
+    docker-php-ext-enable pdo_mysql; \
     docker-php-ext-install bcmath; \
     pecl install xdebug; \
     docker-php-ext-enable xdebug; \
