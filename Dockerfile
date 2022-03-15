@@ -2,9 +2,9 @@ FROM php:8.1-alpine
 
 # Install PHP modules and clean up
 RUN apk add --no-cache $PHPIZE_DEPS \
-	imagemagick-dev icu-dev zlib-dev jpeg-dev libpng-dev libzip-dev libgomp; \
+    imagemagick-dev icu-dev zlib-dev jpeg-dev libpng-dev libzip-dev libgomp; \
     docker-php-ext-configure gd --with-jpeg; \
-	docker-php-ext-install intl pcntl gd exif zip; \
+    docker-php-ext-install intl pcntl gd exif zip; \
     # Extensions
     pecl install bcmath; \
     docker-php-ext-install bcmath; \
