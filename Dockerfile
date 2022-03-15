@@ -6,7 +6,6 @@ RUN apk add --no-cache $PHPIZE_DEPS \
     docker-php-ext-configure gd --with-jpeg; \
     docker-php-ext-install intl pcntl gd exif zip; \
     # Extensions
-    pecl install bcmath; \
     docker-php-ext-install bcmath; \
     pecl install xdebug; \
     docker-php-ext-enable xdebug; \
